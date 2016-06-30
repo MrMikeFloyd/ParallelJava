@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+apply plugin: 'eclipse'
+// Run 'gradlew eclipse' for the eclipse project
+
+apply plugin: 'idea'
+// Run 'gradle idea' for the IntelliJ idea project (no longer necessary in idea 13)
+
+// Netbeans: See http://plugins.netbeans.org/plugin/44510/gradle-support
+
+
+mainClassName = "de.dhbw.parprog.JavaPipe"
+
+repositories {
+  mavenCentral()
+  flatDir {
+    dir 'libs'
+  }
+}
+
+
+dependencies {
+  compile 'commons-lang:commons-lang:2.6'
+  compile name: 'processemu'
+}
+
